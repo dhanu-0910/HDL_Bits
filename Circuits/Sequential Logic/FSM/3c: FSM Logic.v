@@ -15,8 +15,9 @@ module top_module (input clk,input [2:0] y,input x,output Y0,output z);
         endcase
     end
     assign z=(y==3'b011 || y==3'b100);
-    assign Y0=Y[0];
-    /*(Using K Map)
+	assign Y0=Y[0];
+	/*(Using K Map) Y0 is LSB of nextstate(4 variable K map- y2,y1,y0,x)
+	z(3 variable K map- y2,y1,y0)
     assign Y0 = (~x & (y[0] | y[2])) | (x & (~y[0] & ~y[2]));
 	assign z  = (y[1] & y[0]) | (y[2] & ~y[1] & ~y[0]);*/
 endmodule
