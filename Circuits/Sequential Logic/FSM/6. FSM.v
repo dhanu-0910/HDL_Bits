@@ -1,6 +1,6 @@
 module top_module (input clk,input reset,input w,output z);
 	parameter a=0,b=1,c=2,d=3,e=4,f=5;
-    reg [3:0]state,next_state;
+	reg [2:0]state,next_state;
     always @(posedge clk)begin
         if(reset)
             state<=a;
