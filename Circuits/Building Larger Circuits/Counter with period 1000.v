@@ -3,7 +3,7 @@ module top_module (input clk,input reset,output [9:0] q);
         if(reset)begin
             q<=0;
         end
-        else if(q>999)
+        else if(q>=999)
             q<=0;
         else
             q=q+1;
