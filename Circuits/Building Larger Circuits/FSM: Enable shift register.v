@@ -15,3 +15,15 @@ module top_module (input clk,input reset,output shift_ena);
     end
     assign shift_ena=(state==s1 | state==s2 | state==s3 | state==s4);            
 endmodule
+//Method 2
+module top_module (input clk,input reset,output shift_ena);
+	reg [2:0] count;
+	always @(posedge clk) begin
+   		if (reset)
+        	count <= 0;
+    	else if (count < 4)
+        	count <= count + 1;
+	end
+	assign shift_ena = (count < 4);
+endmodule
+
